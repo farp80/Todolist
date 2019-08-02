@@ -1,7 +1,8 @@
 @import "~bootstrap/scss/bootstrap.scss";
 .todoListDiv{
-    margin: auto;
     text-align: center;
+    border: solid grey;
+    border-radius: 5px;
 }
 
 .containerForList{
@@ -14,14 +15,9 @@
     font-size: xx-small !important;
 }
 
-// input {
-//   margin: 0;
-//   border: solid;
-//   width: 50%;
-//   float: left;
-//   font-size: 16px;
-//   border-radius: 5px;
-// }
+h1{
+    align-items: center !important;
+}
 
 button {
   padding-left: 10px;

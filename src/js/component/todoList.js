@@ -24,7 +24,7 @@ export class TodoList extends React.Component {
 		const { items, currentValue } = this.state;
 		return (
 			<div>
-				<div className="container">
+				<div className="container todoListDiv">
 					<h1>To Do List</h1>
 					<div className="row">
 						<div className="col">
@@ -52,11 +52,6 @@ export class TodoList extends React.Component {
 					<div className="row">
 						<div className="col">
 							<List arrayValues={items} />
-						</div>
-					</div>
-					<div className="row">
-						<div className="column">
-							<p>{items.length + " items to do"}</p>
 						</div>
 					</div>
 				</div>
