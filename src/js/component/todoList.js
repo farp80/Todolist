@@ -1,7 +1,7 @@
 import React from "react";
-import { List } from "./list.js";
+import PropTypes from "prop-types";
 
-export default class TodoList extends React.Component {
+export class TodoList extends React.Component {
 	constructor() {
 		super();
 		this.state = {
@@ -20,15 +20,13 @@ export default class TodoList extends React.Component {
 
 	onChange = e => this.setState({ currentValue: e.target.value });
 
-	removeTodo(i) {
-		let items = this.state.items.filter(item => {
-			return item != i;
+	removeItem = i => {
+		let todos = this.state.items.slice();
+		todos.splice(i, 1);
+		this.setState({
+			items: todos
 		});
-		console.log(this.state.items);
-		// this.setState({
-		// 	items: items
-		// });
-	}
+	};
 
 	render() {
 		const { items, currentValue } = this.state;
@@ -61,18 +59,29 @@ export default class TodoList extends React.Component {
 					</div>
 					<div className="row">
 						<div className="col">
-							<List
-								arrayValues={items}
-								removeTodo={this.removeTodo(items[0])}
-							/>
+							<ul className="list-group">
+								{this.state.items.map((item, i) => (
+									<li
+										className="list-group-item"
+										key={i}
+										onClick={() => {
+											console.log("VALUE" + i);
+											this.removeItem(i);
+										}}>
+										{item}
+										<span>x</span>
+									</li>
+								))}
+								<li
+									className="list-group-item lastItemInList"
+									key={this.state.items.length}>
+									{this.state.items.length + " items to do"}
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
 		);
 	}
-}
-
-export class List extends Component{
-
 }
