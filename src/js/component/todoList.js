@@ -1,7 +1,7 @@
 import React from "react";
 import { List } from "./list.js";
 
-export class TodoList extends React.Component {
+export default class TodoList extends React.Component {
 	constructor() {
 		super();
 		this.state = {
@@ -71,4 +71,8 @@ export class TodoList extends React.Component {
 			</div>
 		);
 	}
+}
+
+export class List extends Component{
+
 }
