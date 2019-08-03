@@ -3,6 +3,7 @@
     text-align: center;
     border: solid grey;
     border-radius: 5px;
+    padding-bottom: 10px;
 }
 
 .containerForList{
@@ -28,6 +29,22 @@ button {
   cursor: pointer;
   transition: 0.3s;
   border-radius: 0.5px;
+}
+
+li:hover span{
+    opacity: 1.0;
+    width: 40px;
+    cursor: pointer;
+}
+
+span{
+    height: 35px;
+    width: 0;
+    float: right;
+    text-align: center;
+    color: lightgrey;
+    opacity: 0;
+    transition: .2s linear;
 }
 /*
 

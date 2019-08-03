@@ -20,6 +20,16 @@ export class TodoList extends React.Component {
 
 	onChange = e => this.setState({ currentValue: e.target.value });
 
+	removeTodo(i) {
+		let items = this.state.items.filter(item => {
+			return item != i;
+		});
+		console.log(this.state.items);
+		// this.setState({
+		// 	items: items
+		// });
+	}
+
 	render() {
 		const { items, currentValue } = this.state;
 		return (
@@ -51,7 +61,10 @@ export class TodoList extends React.Component {
 					</div>
 					<div className="row">
 						<div className="col">
-							<List arrayValues={items} />
+							<List
+								arrayValues={items}
+								removeTodo={this.removeTodo(items[0])}
+							/>
 						</div>
 					</div>
 				</div>
