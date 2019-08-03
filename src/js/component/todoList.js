@@ -65,7 +65,6 @@ export class TodoList extends React.Component {
 										className="list-group-item"
 										key={i}
 										onClick={() => {
-											console.log("VALUE" + i);
 											this.removeItem(i);
 										}}>
 										{item}
